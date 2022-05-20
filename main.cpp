@@ -1,11 +1,15 @@
-#include<iostream>
+#include <iostream>
+#include <string>
+#include <vector>
+
+//#include <QApplication>
+//#include "mainwindow.h"
 
 #include "exceptionsizetab.h"
-
 #include "exceptionbounds.h"
 #include "exceptioncommand.h"
-bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_enemy,
-int x, int y);
+
+bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_enemmis, int x, int y);
 
 bool deplacer_personnage(int&, int&, std::string);
 
@@ -19,6 +23,7 @@ int main(int argc, char *argv[])
     while(true){
 
         //Demander la commande a l'utilisateur
+        //std::cin.ignore();
         std::getline(std::cin, saisie);
 
         //Exceptions
@@ -34,14 +39,8 @@ int main(int argc, char *argv[])
         //Afficher les coordonees
         std::cout << "x=" << x << " y=" << y << std::endl;
     }
-
-
-
-    int tab_x2[1];
-    int tab_y2[1];
-    int x2 = 1;
-    int y2 = 2;
-    int nbreemeny2 = 2 ;
+    return 0;
+}
 
 //Fct de base pour deplacer le personnage
 bool deplacer_personnage(int& x, int& y, std::string cmd){
@@ -51,14 +50,6 @@ bool deplacer_personnage(int& x, int& y, std::string cmd){
     const int xmax = 32;
     const int ymin = 0;
     const int ymax = 15;
-    try
-      {
-      detecter_collision(tab_x2,tab_y2,nbreemeny2,x2,y2);
-      }
-      catch (ExceptionSizeTab& eb)
-      {
-      std::cout << "On a lever une exception au niveau du 'nbre d'enemy' . ";
-      }
 
     //On modifie les coordonées pour chaque commande
     if(cmd == "UP" && y+1<=ymax){
@@ -90,34 +81,35 @@ bool deplacer_personnage(int& x, int& y, std::string cmd){
     }
 }
 
-
-
-
-
-
-
-
-
-
-int enn_x[4] = {1, 2, 3, 4}, enn_y[4] = {1, 2, 3, 4};
- if (detecter_collision(enn_x, enn_y, 4, x, y))
- {
- std::cout << "Collision" << std::endl;
- }
- return 0;
-
- }
-
-
-
- bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_enemy,
-int x, int y)
+//...
+bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_ennemis,int x, int y)
 {
+     //Déclaration et initialisation des variables
      ExceptionSizeTab _uneexception;
- if (nb_enemy <= 0 ){
-    throw  _uneexception;
-     std::cout<< "hello ";
- }
-else {
- }
- }
+     int i = 0;
+     int u = 0;
+     bool collision = 0;
+
+     //...
+     if (nb_ennemis > 0 ){
+         std::vector<int> tableaux(nb_ennemis);
+         std::vector<int> tableauy(nb_ennemis);
+
+         //...
+         for(i=0; i<nb_ennemis; i++){
+             tableaux[i] = ennemis_x[i];
+             tableauy[i] = ennemis_y[i];
+         }
+         //...
+         for(u=0; u<nb_ennemis; u++){
+             if((tableaux[u] == x) && (tableauy[u] == y))
+                 collision = 1;
+         }
+         return collision;
+     }
+     //Si la valeur de nb_ennemis n'est pas bonne
+     else{
+         throw _uneexception;
+     }
+}
+
