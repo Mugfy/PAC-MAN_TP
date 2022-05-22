@@ -11,26 +11,32 @@ CONFIG += console
 
 SOURCES += \
     background.cpp \
+    clyde.cpp \
     drawable.cpp \
     drawableelem.cpp \
+    ennemi.cpp \
     exceptionbounds.cpp \
     exceptioncommand.cpp \
     interactive.cpp \
     main.cpp \
     movable.cpp \
+    observercollision.cpp \
     regularmove.cpp
     exceptionbounds.cpp
     exceptioncommand.cpp
 
 HEADERS += \
     background.h \
+    clyde.h \
     consts.h \
     drawable.h \
     drawableelem.h \
+    ennemi.h \
     exceptionbounds.h \
     exceptioncommand.h \
     interactive.h \
     movable.h \
+    observercollision.h \
     regularmove.h
     exceptionbounds.h
     exceptioncommand.h
