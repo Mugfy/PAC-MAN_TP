@@ -18,6 +18,8 @@ SOURCES += \
     interactive.cpp \
     main.cpp \
     movable.cpp \
+    notifiercollision.cpp \
+    personnage.cpp \
     regularmove.cpp
     exceptionbounds.cpp
     exceptioncommand.cpp
@@ -31,6 +33,8 @@ HEADERS += \
     exceptioncommand.h \
     interactive.h \
     movable.h \
+    notifiercollision.h \
+    personnage.h \
     regularmove.h
     exceptionbounds.h
     exceptioncommand.h
