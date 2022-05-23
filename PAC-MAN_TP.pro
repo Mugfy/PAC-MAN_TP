@@ -21,8 +21,8 @@ SOURCES += \
     observercollision.cpp \
     notifiercollision.cpp \
     personnage.cpp \
-    regularmove.cpp
-    exceptionbounds.cpp
+    regularmove.cpp \
+    exceptionbounds.cpp \
     exceptioncommand.cpp
 
 HEADERS += \
@@ -39,8 +39,8 @@ HEADERS += \
     observercollision.h \
     notifiercollision.h \
     personnage.h \
-    regularmove.h
-    exceptionbounds.h
+    regularmove.h \
+    exceptionbounds.h \
     exceptioncommand.h
 
 # Default rules for deployment.
