@@ -51,3 +51,21 @@ bool Personnage::new_pos()
         throw ExceptionCommand();
     }
 }
+
+bool Personnage::test_collision(int x, int y)
+{
+    //Si les coord sont les mêmes que le personnage, renvoyer vrai
+    if((x == pos_x) && (y == pos_y))
+    {
+        collision();
+        return(true);
+    }
+
+    //Sinon renvoyer faux
+    return(false);
+}
+
+void Personnage::collision()
+{
+    std::cout << "Il y a une collision avec le personnage" << std::endl;
+}

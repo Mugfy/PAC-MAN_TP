@@ -2,5 +2,5 @@
 
 ObserverCollision::ObserverCollision()
 {
-
 }
+

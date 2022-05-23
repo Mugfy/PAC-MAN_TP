@@ -1,13 +1,8 @@
 #include "notifiercollision.h"
 
-<<<<<<< HEAD
 NotifierCollision::NotifierCollision()
 {
-=======
 
-
-NotifierCollision::NotifierCollision()
-{
 }
 
 void NotifierCollision::addObserver(ObserverCollision* obs)
@@ -33,7 +28,9 @@ void NotifierCollision::notify(int x, int y)
     for (auto obs : observers) {
         //Si il y a collision, appeler collision
         if (obs->test_collision(x, y)) {
-            obs->collision(this);
+           obs->collision();
+
+            //obs->collision(this);
         }
     }
 
@@ -45,6 +42,4 @@ void NotifierCollision::notify(int x, int y)
             observers[i].collision(this);
         }
     }*/
->>>>>>> b21072dc2e3a0d825899946d3fe732341d78d4ed
-
 }

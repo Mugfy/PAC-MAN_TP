@@ -1,24 +1,40 @@
 #ifndef ENNEMI_H
 #define ENNEMI_H
-#include "observercollision.h"
 
-class Ennemi:ObserverCollision
+#include <iostream>
+
+#include "observercollision.h"
+#include "notifiercollision.h"
+
+class Ennemi : public ObserverCollision , public NotifierCollision
 {
 private:
-    //les position x et y de l'ennemi
-    int position_X;
-    int position_y;
+    int pos_x;
+    int pos_y;
 public:
-    //constructeur par deafut
     Ennemi();
 
-    //la nouvelle position, virtuelle pure
-    virtual void new_pos ()=0;
+    //méthode virtuelle pure implémentée dans Clyde
+    virtual void new_pos () =0;
 
-    //fonction deplacer l'ennemi
-    void deplacer(int x, int y);
+    //méthode pour forcer les valeurs pour les tests
+    void deplacer(int, int);
+
+    //Redéfition des méthodes virtuelles pures de ObserverCollision
+    bool test_collision(int, int);
+    void collision();
 
 
+
+    //A RETIRER
+
+    //Setters
+    void setX(int);
+    void setY(int);
+
+    //Getters
+    int getX();
+    int getY();
 
 };
 

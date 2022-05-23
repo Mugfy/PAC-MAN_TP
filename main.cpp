@@ -9,38 +9,28 @@
 #include "exceptionbounds.h"
 #include "exceptioncommand.h"
 
+#include "clyde.h"
+#include "personnage.h"
+
 bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_enemmis, int x, int y);
 
 bool deplacer_personnage(int&, int&, std::string);
 
 int main(int argc, char *argv[])
 {
-    //Déclaration et initialisation des variables
-    int x=0, y=0;
-    std::string saisie="IDLE";
 
-    //Boucle "infinie" pour demander indéfiniemen la saisie à l'utilisateur
-    while(true){
+Clyde clyde1;
+Clyde clyde2;
+Personnage personnage;
 
-        //Demander la commande a l'utilisateur
-        //std::cin.ignore();
-        std::getline(std::cin, saisie);
+clyde1.deplacer(1,0);
+personnage.setMovement("UP");
+personnage.new_pos();
 
-        //Exceptions
-        try{
-            deplacer_personnage(x, y, saisie);
-        }
-        catch(ExceptionCommand& ec){
-            std::cout << "La commande entree n'est pas reconnue" << std::endl;
-        }
-        catch(ExceptionBounds& eb){
-            std::cout << "Le deplacement demande sort des limites" << std::endl;
-        }
-        //Afficher les coordonees
-        std::cout << "x=" << x << " y=" << y << std::endl;
-    }
     return 0;
 }
+
+
 
 //Fct de base pour deplacer le personnage
 bool deplacer_personnage(int& x, int& y, std::string cmd){
@@ -81,7 +71,7 @@ bool deplacer_personnage(int& x, int& y, std::string cmd){
     }
 }
 
-//...
+//Fct de base pour detecter les collisions avec les ennemis
 bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_ennemis,int x, int y)
 {
      //Déclaration et initialisation des variables
@@ -112,4 +102,3 @@ bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_ennemis,int x, 
          throw _uneexception;
      }
 }
-
