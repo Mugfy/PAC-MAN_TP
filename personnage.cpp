@@ -57,7 +57,6 @@ bool Personnage::test_collision(int x, int y)
     //Si les coord sont les mêmes que le personnage, renvoyer vrai
     if((x == pos_x) && (y == pos_y))
     {
-        collision();
         return(true);
     }
 
@@ -65,7 +64,13 @@ bool Personnage::test_collision(int x, int y)
     return(false);
 }
 
-void Personnage::collision()
+int Personnage::getX()
 {
-    std::cout << "Il y a une collision avec le personnage" << std::endl;
+    return pos_x;
 }
+
+int Personnage::getY()
+{
+    return pos_y;
+}
+

@@ -8,10 +8,12 @@ Clyde::Clyde()
 void Clyde::new_pos()
 {
     srand(time(NULL));
-    int x = (getX() + rand()%10); //valeur aléatoire en 0 et 9
-    int y = (getY() + rand()%10);
+    int rnd = rand()%4;
 
-    //Demander au professeur car ici je ne savais pas comment modifier les coord donc j'ai mis des setters
-    setX(x);
-    setY(y);
+    switch(rnd){
+    case 0: deplacer(1,0);
+    case 1: deplacer(-1,0);
+    case 2: deplacer(0,1);
+    case 3: deplacer(0,-1);
+    }
 }

@@ -1,12 +1,17 @@
 #ifndef OBSERVERCOLLISION_H
 #define OBSERVERCOLLISION_H
 
+#include <iostream>
+
+#include "notifiercollision.h"
+
 class ObserverCollision
 {
 private:
+    NotifierCollision notifieur;
 public:
     ObserverCollision();
-    virtual void collision() =0;
+    void collision(NotifierCollision);
     virtual bool test_collision(int, int) =0;
 
 };

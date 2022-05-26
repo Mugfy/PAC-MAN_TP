@@ -18,19 +18,14 @@ public:
     virtual void new_pos () =0;
 
     //méthode pour forcer les valeurs pour les tests
+    void fdeplacer(int, int);
+
+    //méthode de déplacement
     void deplacer(int, int);
 
     //Redéfition des méthodes virtuelles pures de ObserverCollision
     bool test_collision(int, int);
-    void collision();
-
-
-
-    //A RETIRER
-
-    //Setters
-    void setX(int);
-    void setY(int);
+    //void collision(NotifierCollision);
 
     //Getters
     int getX();

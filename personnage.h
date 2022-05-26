@@ -11,7 +11,7 @@
 class Personnage : public NotifierCollision, public ObserverCollision
 {
 private:
-    int pos_x, pos_y;
+    int pos_x=16, pos_y=8;
     std::string currMovement;
 public:
     Personnage();
@@ -20,6 +20,9 @@ public:
 
     //Redéfition des méthodes virtuelles pures de ObserverCollision
     bool test_collision(int, int);
-    void collision();
+    //void collision(NotifierCollision);
+
+    int getX();
+    int getY();
 };
 

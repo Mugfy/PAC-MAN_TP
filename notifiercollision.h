@@ -3,14 +3,15 @@
 
 #include <vector>
 #include <memory>
+#include <algorithm>
 
-#include "observercollision.h"
+//#include "observercollision.h"
+class ObserverCollision;
 
 class NotifierCollision
 {
 private :
     std::vector<ObserverCollision*> observers;
-    int x, y;
 public:
     NotifierCollision();
     void addObserver(ObserverCollision*);
