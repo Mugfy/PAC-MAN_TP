@@ -2,7 +2,6 @@
 
 Clyde::Clyde()
 {
-
 }
 
 void Clyde::new_pos()

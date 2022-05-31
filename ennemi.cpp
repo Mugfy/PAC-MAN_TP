@@ -1,7 +1,9 @@
 #include "ennemi.h"
+#include <iostream>
 
-Ennemi::Ennemi()
+Ennemi::Ennemi():RegularMove(8 , 8 , background)
 {
+    set_background_image("clyde_dr_1");
 }
 
 void Ennemi::deplacer(int x, int y)
@@ -30,6 +32,10 @@ bool Ennemi::test_collision(int x, int y)
 
     //Sinon renvoyer faux
     return(false);
+}
+
+void Ennemi::update_pos(){
+    new_pos();
 }
 
 int Ennemi::getX()

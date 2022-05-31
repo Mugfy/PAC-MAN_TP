@@ -13,13 +13,9 @@
 #include "clyde.h"
 #include "personnage.h"
 
-bool detecter_collision(int ennemis_x[], int ennemis_y[], int nb_enemmis, int x, int y);
-
-bool deplacer_personnage(int&, int&, std::string);
-
 int main(int argc, char *argv[])
 {
-    Personnage Pac;
+    /*Personnage Pac;
     Clyde Clydo;
     Clyde Clydo2;
     Pac.addObserver(&Clydo);
@@ -53,7 +49,7 @@ int main(int argc, char *argv[])
         }
 
         std::cout << "Pac est actuellement en x=" << Pac.getX() << " y=" << Pac.getY() << std::endl;
-    }
+    }*/
 
     return 0;
 }
