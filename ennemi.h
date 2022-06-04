@@ -3,14 +3,16 @@
 
 #include <iostream>
 
+#include "regularmove.h"
 #include "observercollision.h"
 #include "notifiercollision.h"
 
-class Ennemi : public ObserverCollision , public NotifierCollision
+class Ennemi : public ObserverCollision , public NotifierCollision, public RegularMove
 {
 private:
     int pos_x;
     int pos_y;
+    Background* background;
 public:
     Ennemi();
 
@@ -31,6 +33,8 @@ public:
     int getX();
     int getY();
 
+    //Redefinition des methodes virtuelles pures de RegularMove
+    void update_pos();
 };
 
 #endif // ENNEMI_H

@@ -20,6 +20,7 @@ SOURCES += \
     movable.cpp \
     observercollision.cpp \
     notifiercollision.cpp \
+    pastille.cpp \
     personnage.cpp \
     regularmove.cpp \
     exceptionbounds.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     movable.h \
     observercollision.h \
     notifiercollision.h \
+    pastille.h \
     personnage.h \
     regularmove.h \
     exceptionbounds.h \
