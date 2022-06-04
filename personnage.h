@@ -7,12 +7,13 @@
 #include "exceptioncommand.h"
 #include "notifiercollision.h"
 #include "observercollision.h"
+#include "interactive.h"
 
-class Personnage : public NotifierCollision, public ObserverCollision
+class Personnage : public NotifierCollision, public ObserverCollision, public Interactive
 {
 private:
-    int pos_x=16, pos_y=8;
     std::string currMovement;
+    Background* background;
 public:
     Personnage();
     void setMovement(std::string);
@@ -24,5 +25,12 @@ public:
 
     int getX();
     int getY();
+
+    //Redéfition des méthodes virtuelles pures de Interactive
+    //void key_pressed(char key);
+    void arrow_pressed(std::string cmd);
+
+    //Redéfition des méthodes virtuelles pures de RegulareMove
+    void update_pos();
 };
 

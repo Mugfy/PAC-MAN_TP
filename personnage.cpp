@@ -1,7 +1,20 @@
 #include "personnage.h"
 
-Personnage::Personnage()
+Personnage::Personnage():Interactive(16,8,background)
 {
+    set_background_image("pacman_dr_3");
+}
+
+/*void Personnage::key_pressed(char key){
+
+}*/
+
+void Personnage::update_pos(){
+    new_pos();
+}
+
+void Personnage::arrow_pressed(std::string cmd){
+    currMovement = cmd;
 }
 
 void Personnage::setMovement(std::string Movement)
