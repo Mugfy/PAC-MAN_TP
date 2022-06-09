@@ -1,7 +1,8 @@
 #include "personnage.h"
 
-Personnage::Personnage():Interactive(16,8,background)
+Personnage::Personnage(int x, int y, Background* parent):Interactive(x,y,parent)
 {
+
     set_background_image("pacman_dr_3");
 }
 

@@ -1,6 +1,6 @@
 #include "clyde.h"
 
-Clyde::Clyde()
+Clyde::Clyde(int x, int y, Background* parent):Ennemi(x,y,parent)
 {
 }
 

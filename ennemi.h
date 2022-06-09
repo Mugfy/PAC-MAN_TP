@@ -14,7 +14,7 @@ private:
     int pos_y;
     Background* background;
 public:
-    Ennemi();
+    Ennemi(int, int, Background*);
 
     //méthode virtuelle pure implémentée dans Clyde
     virtual void new_pos () =0;

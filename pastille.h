@@ -7,9 +7,8 @@
 class pastille : public DrawableElem, public ObserverCollision
 {
 private:
-    Background* background;
 public:
-    pastille();\
+    pastille(int, int, Background*);
     void collision(NotifierCollision notifieur);
 };
 

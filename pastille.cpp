@@ -1,6 +1,6 @@
 #include "pastille.h"
 
-pastille::pastille(): DrawableElem(8 , 8 , background)
+pastille::pastille(int x, int y, Background* parent): DrawableElem(x, y, parent)
 {
  set_background_image("pastille");
 }

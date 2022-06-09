@@ -13,9 +13,8 @@ class Personnage : public NotifierCollision, public ObserverCollision, public In
 {
 private:
     std::string currMovement;
-    Background* background;
 public:
-    Personnage();
+    Personnage(int, int, Background*);
     void setMovement(std::string);
     bool new_pos();
 

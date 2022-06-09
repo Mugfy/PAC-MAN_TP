@@ -1,7 +1,7 @@
 #include "ennemi.h"
 #include <iostream>
 
-Ennemi::Ennemi():RegularMove(8 , 8 , background)
+Ennemi::Ennemi(int x, int y, Background *parent):RegularMove(x , y , parent)
 {
     set_background_image("clyde_dr_1");
 }

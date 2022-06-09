@@ -9,7 +9,7 @@
 class Clyde : public Ennemi
 {
 public:
-    Clyde();
+    Clyde(int, int, Background*);
     void new_pos();
 };
 
