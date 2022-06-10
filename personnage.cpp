@@ -60,7 +60,7 @@ bool Personnage::new_pos()
     }
     //Si on sort des limites
     else if((currMovement == "UP") || (currMovement == "DOWN") || (currMovement == "LEFT") || (currMovement == "RIGHT")){
-         //throw ExceptionBounds();
+         throw ExceptionBounds();
     }
     //Si on entre une commande non reconnue
     else{
