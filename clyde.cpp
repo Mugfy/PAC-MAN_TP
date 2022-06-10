@@ -10,9 +10,19 @@ void Clyde::new_pos()
     int rnd = rand()%4;
 
     switch(rnd){
-    case 0: deplacer(1,0);
-    case 1: deplacer(-1,0);
-    case 2: deplacer(0,1);
-    case 3: deplacer(0,-1);
+    case 0:
+        deplacer(1,0);
+        break;
+    case 1:
+        deplacer(-1,0);
+        break;
+    case 2:
+        deplacer(0,1);
+        break;
+    case 3:
+        deplacer(0,-1);
+        break;
+    default:
+        break;
     }
 }

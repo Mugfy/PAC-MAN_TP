@@ -10,3 +10,16 @@ void pastille::collision(NotifierCollision notifieur){
     notifieur.removeObserver(this);
     hide();
 }
+
+bool pastille::test_collision(int x, int y)
+{
+    //Si les coord sont les mêmes que le personnage, renvoyer vrai
+    if((x == pos_x) && (y == pos_y))
+    {
+        return(true);
+    }
+
+    //Sinon renvoyer faux
+    return(false);
+}
+

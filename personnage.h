@@ -26,7 +26,7 @@ public:
     int getY();
 
     //Redéfition des méthodes virtuelles pures de Interactive
-    //void key_pressed(char key);
+    void key_pressed(char key);
     void arrow_pressed(std::string cmd);
 
     //Redéfition des méthodes virtuelles pures de RegulareMove

@@ -4,6 +4,7 @@
 Ennemi::Ennemi(int x, int y, Background *parent):RegularMove(x , y , parent)
 {
     set_background_image("clyde_dr_1");
+    init_animation_ennemi("clyde");
 }
 
 void Ennemi::deplacer(int x, int y)
@@ -36,6 +37,7 @@ bool Ennemi::test_collision(int x, int y)
 
 void Ennemi::update_pos(){
     new_pos();
+    this->positionner(pos_x, pos_y);
 }
 
 int Ennemi::getX()

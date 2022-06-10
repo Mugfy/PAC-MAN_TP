@@ -10,6 +10,9 @@ private:
 public:
     pastille(int, int, Background*);
     void collision(NotifierCollision notifieur);
+
+    //On redéfinit la méthode virtuelle pure de ObserverCollision
+    bool test_collision(int x, int y);
 };
 
 #endif // PASTILLE_H

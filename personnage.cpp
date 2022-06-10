@@ -4,14 +4,16 @@ Personnage::Personnage(int x, int y, Background* parent):Interactive(x,y,parent)
 {
 
     set_background_image("pacman_dr_3");
+    init_animation_perso();
 }
 
-/*void Personnage::key_pressed(char key){
+void Personnage::key_pressed(char key){
 
-}*/
+}
 
 void Personnage::update_pos(){
     new_pos();
+    this->positionner(pos_x, pos_y);
 }
 
 void Personnage::arrow_pressed(std::string cmd){
@@ -33,12 +35,12 @@ bool Personnage::new_pos()
 
     //On modifie les coordonées pour chaque commande
     if((currMovement == "UP") && ((pos_y+1)<=ymax)){
-         pos_y+=1;
+         pos_y-=1;
          notify(pos_x, pos_y);
          return true;
     }
     else if((currMovement == "DOWN") && ((pos_y-1)>=ymin)){
-         pos_y-=1;
+         pos_y+=1;
          notify(pos_x, pos_y);
          return true;
     }
@@ -52,13 +54,13 @@ bool Personnage::new_pos()
          notify(pos_x, pos_y);
          return true;
     }
-    else if(currMovement == "IDLE"){
+    else if((currMovement == "IDLE") || ("" == currMovement)){
         notify(pos_x, pos_y);
         return false;
     }
     //Si on sort des limites
     else if((currMovement == "UP") || (currMovement == "DOWN") || (currMovement == "LEFT") || (currMovement == "RIGHT")){
-         throw ExceptionBounds();
+         //throw ExceptionBounds();
     }
     //Si on entre une commande non reconnue
     else{
